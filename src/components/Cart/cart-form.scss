@@ -1,0 +1,78 @@
+.cart-form {
+  padding: 20px 27px 32px;
+  background-color: var(--color-black-dark);
+
+  &__title {
+    font: 21px/1.2 var(--font-primary), sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--color-body);
+    margin: 0 0 25px;
+    text-align: center;
+  }
+
+  &__group + &__group {
+    margin-top: 16px;
+  }
+
+  &__group_row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 6px;
+
+    @include respond-to("s") {
+      display: block;
+    }
+
+    & > &__input {
+      margin-top: 16px;
+
+      @include respond-to("s") {
+        margin-top: 0;
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__input {
+    height: 48px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background-color: var(--color-white);
+    padding: 11px 16px;
+    color: var(--color-black);
+    font: 21px/1.2 var(--font-primary), sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    width: 100%;
+    transition: 0.2s box-shadow;
+
+    &:focus {
+      box-shadow: 0 5px 0 0 var(--color-pink);
+    }
+
+    &::placeholder {
+      color: var(--color-grey);
+    }
+  }
+
+  @include respond-to("s") {
+    background-color: transparent;
+    padding: 24px;
+
+    &__group_row {
+      display: block;
+
+      & > &__input {
+        margin-top: 16px;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
